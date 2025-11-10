@@ -1,0 +1,248 @@
+@import "../../main.scss";
+
+// Banner Section
+.banner-section-testimonials {
+    position: relative;
+    overflow: hidden;
+
+    .img-container-testimonials {
+        width: 100%;
+        max-height: 450px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+            @media (max-width: 992px) {
+                aspect-ratio: 3 / 2;
+            }
+
+            @media (max-width: 768px) {
+                aspect-ratio: 7 / 2;
+            }
+
+            @media (max-width: 480px) {
+                aspect-ratio: 4 / 2;
+            }
+
+            @media (max-width: 320px) {
+                aspect-ratio: 5 / 3;
+            }
+        }
+    }
+
+    .banner-overlay-testimonials {
+        position: absolute;
+        inset: 0;
+        background: rgba(12, 87, 40, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        text-align: center;
+        padding: 8vw 5vw;
+
+        @media (max-width: 992px) {
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+
+        @media (max-width: 480px) {
+            align-items: center;
+        }
+    }
+
+    .banner-title-testimonials {
+        color: $text_color_light;
+        font-size: clamp(32px, 6vw, 64px);
+        font-weight: 700;
+        line-height: 1.2;
+        z-index: 3;
+    }
+}
+
+// Testimonials Section
+.testimonials-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    padding: 80px 210px;
+
+
+    .testimonial-card {
+        position: relative;
+        max-width: 500px;
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .content {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            transition: background-color 0.4s ease, color 0.4s ease; // smooth transition
+
+            .testimonial-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; // max 4 lines
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: left;
+                color: #333;
+            }
+
+            .testimonial-author {
+                width: 100%;
+                font-weight: 500 !important;
+                font-size: 18px;
+                text-align: right;
+                color: $text_color_dark;
+            }
+        }
+
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: -50px;
+            padding: 0 20px 20px 20px;
+
+            .testimonial-image {
+                img {
+                    width: 100px;
+                    height: 140px;
+                    border-radius: 8px;
+                    padding: 4px;
+                    border: 2px dotted $primary_orange_color;
+                    object-fit: cover;
+                }
+            }
+
+            .testimonial-stamp {
+                margin-top: 40px;
+
+                img {
+                    width: 100%;
+                    height: 60px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+
+/* Responsive Section */
+@media (max-width: 1024px) {
+    .testimonials-section {
+        padding: 60px 100px;
+
+        .testimonial-card {
+            .content {
+                padding: 25px 20px;
+
+                .testimonial-text {
+                    font-size: 0.95rem;
+                }
+
+                .testimonial-author {
+                    font-size: 16px;
+                }
+            }
+
+            .testimonial-footer {
+                padding: 0 15px 15px 15px;
+
+                .testimonial-image img {
+                    width: 90px;
+                    height: 120px;
+                }
+
+                .testimonial-stamp img {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 50px 60px;
+        gap: 20px;
+
+        .testimonial-card {
+            max-width: 450px;
+
+            .content {
+                padding: 20px 18px;
+
+                .testimonial-text {
+                    font-size: 0.9rem;
+                }
+
+                .testimonial-author {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials-section {
+        display: grid !important; // force grid
+        grid-template-columns: 1fr !important; // force single column
+        gap: 20px !important;
+        padding: 40px 10px !important;
+        justify-items: stretch !important; // make full width cards
+        justify-content: stretch !important;
+
+        .testimonial-card {
+            width: 100% !important;
+            min-height: auto;
+
+            .content {
+                padding: 18px 15px;
+                gap: 20px;
+
+                .testimonial-text {
+                    font-size: 0.85rem;
+                    -webkit-line-clamp: 5;
+                }
+
+                .testimonial-author {
+                    font-size: 14px;
+                }
+            }
+
+            .testimonial-footer {
+                margin-top: -30px;
+
+                .testimonial-image img {
+                    width: 80px;
+                    height: 110px;
+                }
+
+                .testimonial-stamp img {
+                    height: 45px;
+                }
+            }
+        }
+    }
+}

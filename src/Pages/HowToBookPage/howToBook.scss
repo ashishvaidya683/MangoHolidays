@@ -1,0 +1,307 @@
+@import "../../main.scss";
+
+// -- Banner Section --
+.banner-section-how-to-book {
+    position: relative;
+    overflow: hidden;
+
+    .img-container-how-to-book {
+        width: 100%;
+        height: 100%;
+        max-height: 550px;
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            aspect-ratio: 6 / 2;
+
+            @media (max-width: 1080px) {
+                aspect-ratio: 12 / 5.4;
+            }
+
+            @media (max-width: 768px) {
+                aspect-ratio: 14 / 8.4;
+            }
+
+            @media (max-width: 480px) {
+                aspect-ratio: 6 / 9.8;
+            }
+
+            @media (max-width: 320px) {
+                aspect-ratio: 5 / 9.8;
+            }
+        }
+    }
+
+    .banner-overlay-how-to-book {
+        position: absolute;
+        inset: 0;
+        background: rgba(12, 87, 40, 0.4);
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: end;
+        padding: 100px 110px;
+        gap: 30px;
+
+        @media (max-width: 1200px) {
+            padding: 80px 70px;
+            gap: 25px;
+        }
+
+        @media (max-width: 992px) {
+            padding: 60px 40px;
+            gap: 25px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+        }
+
+        @media (max-width: 480px) {
+            padding-left: 20px;
+            padding-right: 20px;
+            gap: 0px;
+        }
+    }
+
+    .title-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 3;
+        max-width: 650px;
+        width: 100%;
+
+        @media (max-width: 992px) {
+            padding: 30px 25px;
+            max-width: 480px;
+        }
+
+        @media (max-width: 768px) {
+            align-items: start;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        h1 {
+            color: $Secondary_green_color;
+            font-size: 38px;
+            line-height: 1.2;
+            margin: 0;
+            text-align: left;
+
+            span {
+                font-family: "Righteous", sans-serif !important;
+                font-weight: 500 !important;
+                font-style: normal !important;
+                color: $primary_orange_color;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 40px;
+            }
+
+            @media (max-width: 992px) {
+                font-size: 36px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+                text-align: left;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 26px;
+            }
+        }
+
+        h3 {
+            font-size: 22px;
+            color: $text_color_dark;
+            display: inline-block;
+            align-self: flex-start;
+
+            @media (max-width: 992px) {
+                font-size: 17px;
+                padding: 10px 18px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+                padding: 8px 16px;
+                align-self: start;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+// -- Context section --
+.how-to-book-context {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 100px 120px;
+    gap: 30px;
+
+    h2 {
+        font-size: 32px;
+        color: $primary_orange_color;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: $text_color_dark;
+        line-height: 1.6;
+    }
+
+    p {
+        color: #333;
+    }
+
+    .context-left {
+        justify-items: start;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .context-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            ul {
+                line-height: 1.9;
+                list-style: none;
+
+
+                li {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    margin-bottom: 10px;
+
+                    img {
+                        width: 24px;
+                        height: 16px;
+                        object-fit: contain;
+                        margin-top: 6px;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 16px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .context-right {
+        .booking-amount-section {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+
+            .booking-card {
+                background: #fff;
+                border: 1px solid #e6e6e6;
+                border-radius: 10px;
+                padding: 14px 20px;
+
+                h2 {
+                    font-size: 24px;
+                    color: $primary_orange_color;
+                    margin-bottom: 20px;
+                }
+
+                .booking-table,
+                p {
+                    border-collapse: collapse;
+                    font-size: 16px;
+                    color: #777;
+
+                    th,
+                    td {
+                        border: 1px solid #ddd;
+                        padding: 8px 10px;
+                        text-align: left;
+                    }
+
+                    th {
+                        background-color: #f9f9f9;
+
+                        p {
+                            font-weight: 700 !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .booking-amount-section {
+                padding: 20px;
+
+                .booking-card {
+                    padding: 20px;
+
+                    .booking-title {
+                        font-size: 20px;
+                    }
+
+                    .booking-table {
+                        font-size: 14px;
+
+                        th,
+                        td {
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1440px) {
+        padding: 80px 80px;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 90px 60px;
+    }
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 40px 40px;
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+    }
+}
